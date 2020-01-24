@@ -8,7 +8,7 @@ namespace Snake
     {
         public int x;
         public int y;
-        public int sym;
+        public char sym;
         public Point() { }
 
         public Point(int x,int y, char sym) {
