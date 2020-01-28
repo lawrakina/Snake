@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Snake
 {
@@ -19,11 +20,22 @@ namespace Snake
             downLine.Drow();
             rightLine.Drow();
 
-            HorisontalLine hLine = new HorisontalLine(3,10,8,'-');
-            hLine.Drow();
+            Point p = new Point(3,4,'*');
+            Snake snake = new Snake(p,4,Direction.RIGHT);
+            snake.Drow();
 
-            VerticalLine vLine = new VerticalLine(8,3,10,'|');
-            vLine.Drow();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandlKey(key.Key);
+                }
+
+                snake.Move();
+                Thread.Sleep(100);
+            }
+            
 
             Console.ReadKey();
         }
