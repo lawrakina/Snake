@@ -7,11 +7,17 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            //Point p1 = new Point(1, 3, '*');
-            //p1.Draw();
+            Console.SetBufferSize(120,30);
 
-            //Point p2 = new Point(4, 5, '#');
-            //p2.Draw();
+            HorisontalLine upLine = new HorisontalLine(0,78,0,'#');
+            VerticalLine leftLine = new VerticalLine(0,0,23,'#');
+            HorisontalLine downLine = new HorisontalLine(0,78,23,'#');
+            VerticalLine rightLine = new VerticalLine(78,0,23,'#');
+
+            upLine.Drow();
+            leftLine.Drow();
+            downLine.Drow();
+            rightLine.Drow();
 
             HorisontalLine hLine = new HorisontalLine(3,10,8,'-');
             hLine.Drow();

@@ -4,20 +4,13 @@ using System.Text;
 
 namespace Snake
 {
-    class VerticalLine
+    class VerticalLine : Figure
     {
-        public List<Point> pList;
         public VerticalLine(int x,int yTop,int yBottom, char sym) {
             pList = new List<Point>();
             for(int y = yTop; y<= yBottom; y++)
             {
                 pList.Add(new Point(x, y, sym));
-            }
-        }
-        public void Drow() {
-            foreach(Point p in pList)
-            {
-                p.Draw();
             }
         }
     }
